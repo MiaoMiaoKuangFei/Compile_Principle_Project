@@ -2,13 +2,7 @@
 %option yylineno
 
 %top{
-    #include<map>
-    #include<iomanip>
-    #include<set>
-    #include <iostream>
-    #include<string>
-    using namespace std;
-    map<string,int> words_list;
+    #include"common.h"
 }
 %{  
     string get_id_cnt(string id){
