@@ -97,6 +97,9 @@ BIT_NOT  "!"
 MODE  "%"
 
 INT "int"
+CHAR_DEF "char"
+STR_DEF "string"
+BOOL_DEF "bool"
 IF "if"
 ELSE "else"
 WHILE "while"
@@ -148,7 +151,11 @@ CHAR [a-zA-Z]
 {DECI_INT}  {print_format_parse("DECI_INT",yytext,yytext,yylineno);}
 {OCT_INT}  {print_format_parse("OCT_INT",yytext,oct2dec(yytext),yylineno);}
 {HEX_INT}  {print_format_parse("HEX_INT",yytext,hex2dec(yytext),yylineno);}
+{CHAR_DEF}  {print_format_parse("CHAR_DEF",yytext,yylineno);}
+{STR_DEF}  {print_format_parse("STR_DEF",yytext,yylineno);}
+{BOOL_DEF}  {print_format_parse("BOOL_DEF",yytext,yylineno);}
 {INT}  {print_format_parse("INT",yytext,yylineno);}
+
 {SIGNED_INT}  {print_format_parse("SIGNED_INT",yytext,yytext,yylineno);}
 {DIGIT}  {print_format_parse("DIGIT",yytext,yylineno);}
 {LRBRACE}  {print_format_parse("LRBRACE",yytext,yylineno);}
