@@ -1,15 +1,11 @@
-#include"main.tab.hh"
 #include"common.h"
-#include<iostream>
-using std::cout;
-using std::endl;
-TreeNode *root=nullptr;
+tree_node *root=nullptr;
 int main ()
 {
     yyparse();
     if(root){
-        root->genNodeId();
-        root->printAST();
+        root->create_node_id();
+        root->print_tree_from_curr_node();
     }
 }
 int yyerror(char const* message)
